@@ -7,10 +7,10 @@ on:
 
 
 env:
-  ALIYUN_REGISTRY: "${{ secrets.ALIYUN_REGISTRY }}"
-  ALIYUN_NAME_SPACE: "${{ secrets.ALIYUN_NAME_SPACE }}"
-  ALIYUN_REGISTRY_USER: "${{ secrets.ALIYUN_REGISTRY_USER }}"
-  ALIYUN_REGISTRY_PASSWORD: "${{ secrets.ALIYUN_REGISTRY_PASSWORD }}"
+  ALIYUN_REGISTRY: "registry.cn-hangzhou.aliyuncs.com"
+  ALIYUN_NAME_SPACE: "netcoredocker"
+  ALIYUN_REGISTRY_USER: "xiagezhao@gmail.com"
+  ALIYUN_REGISTRY_PASSWORD: "Pass7899"
 
 jobs:
 
@@ -57,7 +57,7 @@ jobs:
 
     - name: Build and push image Aliyun
       run: |
-        echo "${{ secrets.ALIYUN_REGISTRY_PASSWORD }}" | docker login -u "${{ secrets.ALIYUN_REGISTRY_USER }}"  --password-stdin "${{ secrets.ALIYUN_REGISTRY }}"
+        echo "Pass7899" | docker login -u "xiagezhao@gmail.com"  --password-stdin "registry.cn-hangzhou.aliyuncs.com"
         # 数据预处理,判断镜像是否重名
         declare -A duplicate_images
         declare -A temp_map
